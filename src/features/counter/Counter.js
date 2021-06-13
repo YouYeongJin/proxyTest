@@ -9,6 +9,8 @@ import {
   selectCount,
 } from './counterSlice';
 import styles from './Counter.module.css';
+import axios from 'axios';
+import instance from '../../api'
 
 export function Counter() {
   const count = useSelector(selectCount);
@@ -17,8 +19,16 @@ export function Counter() {
 
   const incrementValue = Number(incrementAmount) || 0;
 
+  const testFn = () => {
+    // axios.get("/usersb").then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)});
+    // axios.get("/usersb/users").then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)});
+    // instance.get("/usersb/10").then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)});
+    // instance.get("/usersb/users").then((res)=>{console.log(res.data)}).catch((err)=>{console.log(err)});
+  }
+
   return (
     <div>
+      <input type="button" onClick={testFn}></input>
       <div className={styles.row}>
         <button
           className={styles.button}
