@@ -2,6 +2,9 @@ import axios from 'axios'
 
 // axios 인스턴스를 생성합니다.
 const instance = axios.create({
+    // baseURL 변경하면 잘안된다.. 왠만하면 / 로 두길 권장
+    // axios URL -> axios Interceptor -> Proxy 순으로 url이 변경되는데 
+    // base URL 을 두면 URL이 중복되는듯...
     baseURL: '/',
     timeout: 1000
   });
